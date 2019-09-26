@@ -10,7 +10,7 @@ const fetchBreedDescription = function(breedName, callback) {
       callback('Requested breed does not exist.', null);
     } else if (body !== '[]') {
       const data = JSON.parse(body);
-      callback(null, data[0]['description']);
+      callback(null, data[0]['description'].trim());
     }
 
   });
